@@ -1,0 +1,18 @@
+class Solution:
+    def countLargestGroup(self, n: int) -> int:
+        num = [0 for j in range(36)]         #36位数值为0的数组，代表每个组的数字数目
+        cnt = 0  
+        res = 0
+
+        for i in range(1,n+1):
+            for k in str(i):
+                cnt = cnt + int(k)
+            num[cnt-1]+=1
+            cnt = 0
+
+        num_max = max(num) 
+        for m in range(len(num)):
+            if num[m] == num_max:
+                res +=1
+        
+        return res 
