@@ -1,0 +1,15 @@
+class Solution:
+    def countNumbersWithUniqueDigits(self, n: int) -> int:
+        def f(n):
+            vir = [9,9,8,7,6,5,4,3,2,1]
+            sum = 1
+
+            if n == 0 :
+                return 1
+            elif n == 1:
+                return 10
+            else:
+                for i in range(n):
+                    sum = vir[i] * sum
+                return (sum + f(n-1))
+        return f(n)
