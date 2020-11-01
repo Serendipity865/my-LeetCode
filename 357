@@ -13,3 +13,6 @@ class Solution:
                     sum = vir[i] * sum
                 return (sum + f(n-1))
         return f(n)
+
+
+# f(n) = f(n-1) + 9*9*8*7....
